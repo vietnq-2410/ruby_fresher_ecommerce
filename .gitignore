@@ -21,6 +21,7 @@ config/master.key
 
 /.bundle
 /vendor/
+.vscode/
 
 .rvmrc
 

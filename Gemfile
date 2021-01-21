@@ -36,4 +36,16 @@ group :development, :test do
   gem "rubocop-rails", "~> 2.3.2", require: false
   gem "rspec-rails", "~> 4.0.1"
   gem "mysql2", "~> 0.4.10"
+  gem "faker", git: "https://github.com/stympy/faker"
 end
+
+gem "bcrypt", "3.1.15"
+gem "figaro"
+gem "config"
+gem "jquery-rails", "4.3.1"
+gem "will_paginate", "3.1.7"
+gem "bootstrap-will_paginate", "1.0.0"
+gem "image_processing", "1.9.3"
+gem "mini_magick", "4.9.5"
+gem "active_storage_validations", "0.8.2"
+gem "i18n-js"

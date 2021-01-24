@@ -7,9 +7,26 @@
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "bootstrapjs", "data-turbolinks-track": "reload" %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bootstrap template for you store - E-Commerce Bootstrap Template">
+    <meta name="keywords" content="unistore, e-commerce bootstrap template, premium e-commerce bootstrap template, premium bootstrap template, bootstrap template, e-commerce, bootstrap template, sunrise digital">
+    <meta name="author" content="Sunrise Digital">
   </head>
 
   <body>
+    <div class="toplinks">
+      <%= render "shared/toplinks" %>
+    </div>
+    <nav class="navbar navbar-default">
+      <%= render "shared/navbar" %>
+    </nav>
     <%= yield %>
+    <footer>
+      <%= render "shared/footer" %>
+    </footer>
+    <%= render "shared/modals" %>
   </body>
 </html>

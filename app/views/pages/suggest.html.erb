@@ -1,0 +1,26 @@
+<hr class="offset-top">
+<div class="gray mt-5">
+  <div class="container align-center">
+    <h1 class="upp"> <%= t("suggest.title") %> </h1>
+    <p> <%= t("suggest.title2") %> </p>
+    <hr class="offset-md">
+
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <form class="contact" action="index.php" method="post">
+          <textarea class="form-control" name="message" placeholder="..." required="" rows="5"></textarea>
+          <br>
+
+          <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
+          <br>
+
+          <button type="submit" class="btn btn-primary justify"> <%= t("action.send") %> </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+
+
+<hr class="offset-lg">

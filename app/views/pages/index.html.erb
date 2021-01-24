@@ -1,0 +1,57 @@
+<header>
+  <div class="carousel" data-count="3" data-current="1">
+    <div class="items">
+      <div class="item center" data-marker="1">
+        <%= image_tag "carousel/bckg-2.jpg", class: "background hidden-xs hidden-sm" %>
+        <%= image_tag "carousel/bckg-2-sm.jpg", class: "background visible-sm" %>
+        <%= image_tag "carousel/bckg-2-xs.jpg", class: "background visible-xs" %>
+        <div class="content">
+          <div class="outside-content">
+            <div class="inside-content">
+              <div class="container align-right">
+                <h1 class="h3 colorful blue hidden-xs"><%= t("banners.title") %></h1>
+                <hr class="offset-sm">
+                <h2 class="h1 lg upp colorful blue"><%= t("banners.title2") %><br> <%= t("banners.title3") %></h2>
+                <hr class="offset-md">
+                <hr class="offset-md">
+                <%= link_to t("banners.button"), store_path, class: "btn btn-primary btn-lg black" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<hr class="offset-lg">
+<hr class="offset-lg">
+<section class="products">
+  <div class="container">
+    <h2 class="h2 upp align-center"> <%= t("index.title") %> </h2>
+    <hr class="offset-lg">
+    <div class="row">
+
+      <div class="col-sm-6 col-md-3 product">
+        <div class="body">
+          <a href="#favorites" class="favorites" data-favorite="inactive"><i class="ion-ios-heart-outline"></i></a>
+          <%= link_to image_tag "products/apple-imac-27-retina.jpg" %>
+
+          <div class="content align-center">
+            <p class="price">$<%= t("products.price") %></p>
+            <h2 class="h3"><%= t("products.name") %></h2>
+            <hr class="offset-sm">
+            <button class="btn btn-link"> <i class="ion-android-open"></i> <%= t("products.details") %></button>
+            <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i><%= t("action.add_to_cart") %></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="align-right align-center-xs">
+      <hr class="offset-sm">
+      <a href="./store/"> <h5 class="upp"><%= t("action.view_all") %></h5> </a>
+    </div>
+  </div>
+</section>
+<hr class="offset-lg">
+<hr class="offset-sm">

@@ -1,0 +1,170 @@
+<div class="about">
+  <div class="container">
+    <div class="row">
+      <hr class="offset-md">
+
+      <div class="col-xs-6 col-sm-3">
+        <div class="item">
+          <i class="ion-ios-telephone-outline"></i>
+          <h1><%= t("footer.ft1") %> <br> <span><%= t("footer.ft2") %> </span></h1>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <div class="item">
+          <i class="ion-ios-star-outline"></i>
+          <h1><%= t("footer.ft3") %>  <br> <span><%= t("footer.ft4") %> </span></h1>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <div class="item">
+          <i class="ion-ios-gear-outline"></i>
+          <h1> <%= t("footer.ft5") %>  <br> <span><%= t("footer.ft6") %> </span></h1>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <div class="item">
+          <i class="ion-ios-loop"></i>
+          <h1> <%= t("footer.ft7") %>  <br> <span><%= t("footer.ft8") %> </span> </h1>
+        </div>
+      </div>
+
+      <hr class="offset-md">
+    </div>
+  </div>
+</div>
+
+<div class="subscribe">
+  <div class="container align-center">
+      <hr class="offset-md">
+
+      <h1 class="h3 upp"><%= t("footer.ft9") %> </h1>
+      <p><%= t("footer.ft10") %> </p>
+      <hr class="offset-sm">
+
+      <form action="index.php" method="post">
+        <div class="input-group">
+          <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary"> <%= t("footer.ft11") %>  <i class="ion-android-send"></i> </button>
+          </span>
+        </div>
+      </form>
+      <hr class="offset-lg">
+      <hr class="offset-md">
+
+      <div class="social">
+        <a href="#"><i class="ion-social-facebook"></i></a>
+        <a href="#"><i class="ion-social-twitter"></i></a>
+        <a href="#"><i class="ion-social-googleplus-outline"></i></a>
+        <a href="#"><i class="ion-social-instagram-outline"></i></a>
+        <a href="#"><i class="ion-social-linkedin-outline"></i></a>
+        <a href="#"><i class="ion-social-youtube-outline"></i></a>
+      </div>
+
+
+      <hr class="offset-md">
+      <hr class="offset-md">
+  </div>
+</div>
+
+
+<div class="container">
+  <hr class="offset-md">
+
+  <div class="row menu">
+    <div class="col-sm-3 col-md-2">
+      <h1 class="h4"><%= t("footer.ft12") %>  <i class="ion-plus-round hidden-sm hidden-md hidden-lg"></i> </h1>
+
+      <div class="list-group">
+        <a href="#" class="list-group-item"><%= t("footer.ft13") %> </a>
+        <a href="#" class="list-group-item"><%= t("footer.ft14") %> </a>
+        <a href="#" class="list-group-item"><%= t("footer.ft15") %> </a>
+        <a href="#" class="list-group-item"><%= t("footer.ft16") %> </a>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2">
+      <h1 class="h4"><%= t("footer.ft17") %>  <i class="ion-plus-round hidden-sm hidden-md hidden-lg"></i> </h1>
+
+      <div class="list-group">
+        <a href="#" class="list-group-item"><%= t("footer.ft18") %> </a>
+        <a href="#" class="list-group-item"><%= t("footer.ft19") %> </a>
+        <a href="#" class="list-group-item"><%= t("footer.ft20") %> </a>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2">
+      <h1 class="h4"><%= t("footer.ft2") %>  <i class="ion-plus-round hidden-sm hidden-md hidden-lg"></i> </h1>
+
+      <div class="list-group">
+        <a href="#" class="list-group-item"><%= t("footer.ft21") %> </a>
+        <a href="#" class="list-group-item"><%= t("footer.ft22") %> </a>
+        <a href="#" class="list-group-item"><%= t("footer.ft23") %> </a>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2">
+      <h1 class="h4"><%= t("footer.ft24") %> </h1>
+
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= t("footer.ft25") %> 
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <%= link_to image_tag("flags/gb.png") %>
+          <%= link_to image_tag("flags/es.png") %>
+          <%= link_to image_tag("flags/de.png") %>
+          <%= link_to image_tag("flags/fr.png") %>
+        </ul>
+      </div>
+      <hr class="offset-xs">
+
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= t("footer.ft26") %> 
+          <span class="caret"></span>
+        </button>
+      </div>
+
+    </div>
+    <div class="col-sm-3 col-md-3 col-md-offset-1 align-right hidden-sm hidden-xs">
+      <h1 class="h4"><%= t("footer.ft27") %> </h1>
+
+        <address>
+          <%= t("footer.ft28") %> <br>
+          <%= t("footer.ft29") %> <br>
+          <abbr title="Phone">P:</abbr> (123) 456-7890
+        </address>
+
+        <address>
+          <strong><%= t("footer.ft30") %> </strong><br>
+          <a href="mailto:#"><%= t("footer.ft28") %> </a>
+        </address>
+
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-md-9 payments">
+      <p><%= t("footer.ft29") %> </p>
+
+      <div class="payment-icons">
+        <%== image_tag "payments/paypal.svg" %>
+        <%== image_tag "payments/visa.svg" %>
+        <%== image_tag "payments/master-card.svg" %>
+        <%== image_tag "payments/discover.svg" %>
+        <%== image_tag "payments/american-express.svg" %>
+      </div>
+      <br>
+
+    </div>
+    <div class="col-sm-4 col-md-3 align-right align-center-xs">
+      <hr class="offset-sm hidden-sm">
+      <hr class="offset-sm">
+      <p><%= t("footer.ft30") %> </p>
+      <hr class="offset-lg visible-xs">
+    </div>
+  </div>
+</div>

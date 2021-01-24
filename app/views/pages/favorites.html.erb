@@ -1,0 +1,33 @@
+<hr class="offset-lg">
+<hr class="offset-lg">
+<hr class="offset-lg hidden-xs">
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="products">
+        <div class="row">
+          <h1 class="col-md-12 text-center"><%= t("favorites.favorite_title") %></h1>
+          <div class="col-sm-6 col-md-4 product">
+            <div class="body">
+              <a href="#favorites" class="favorites" data-favorite="active"><i class="ion-ios-heart-outline"></i></a>
+              <%= link_to image_tag("products/lenovo-yoga.jpg"), "#cc" %>
+              <div class="content align-center">
+                <p class="price">$<%= t("products.price") %></p>
+                <h2 class="h3"><%= t("products.name") %></h2>
+                <hr class="offset-sm">
+                <button class="btn btn-link"> <i class="ion-android-open"></i> <%= t("products.details") %></button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> <%= t("action.add_to_cart") %></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <ul class="pagination">
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

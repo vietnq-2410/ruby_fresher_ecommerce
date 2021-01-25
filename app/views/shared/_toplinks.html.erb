@@ -2,6 +2,7 @@
   <%= link_to t("modals.profile"), current_user %>
   <%= link_to t("action.logout"), logout_path, method: :delete %>
 <% else %>
+  <%= link_to t("modals.registration"), signup_path, class: "ion-person" %>
   <%= link_to t("modals.signin"), login_path, class: "ion-unlocked" %>
 <% end %>
 <%= link_to t("favorites.favorite"), "./favorites/", class: "ion-ios-heart" %>

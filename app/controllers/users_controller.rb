@@ -2,11 +2,6 @@ class UsersController < ApplicationController
   before_action :logged_in_user, except: %i(new create)
   before_action :load_user, except: %i(new create)
 
-  def index
-    @users = User.paginate(page: params[:page],
-      per_page: Settings.paginate.users)
-  end
-
   def show; end
 
   def new

@@ -1,0 +1,4 @@
+user:
+  name:
+    min_length: 6
+reset_pass_expired_time: 2

@@ -1,0 +1,3 @@
+user:
+  name:
+    min_length: 6

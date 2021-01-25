@@ -1,5 +1,10 @@
-<%= link_to t("modals.registration"), "#signin", "data-toggle" => "modal", "data-target" => "#Modal-Registration", class: "ion-person" %>
-<%= link_to t("modals.signin"), "#signin", "data-toggle" => "modal", "data-target" => "#Modal-SignIn", class: "ion-unlocked" %>
+<% if logged_in? %>
+  <%= link_to t("modals.profile"), current_user %>
+  <%= link_to t("action.logout"), logout_path, method: :delete %>
+<% else %>
+  <%= link_to t("modals.registration"), signup_path, class: "ion-person" %>
+  <%= link_to t("modals.signin"), login_path, class: "ion-unlocked" %>
+<% end %>
 <%= link_to t("favorites.favorite"), "./favorites/", class: "ion-ios-heart" %>
 <%= link_to "8000 555-44-65", "tel:+80005554465", class: "hidden-xs ion-android-call" %>
 <%= link_to t("locale.en"), locale: :en %>

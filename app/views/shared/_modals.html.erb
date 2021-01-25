@@ -1,0 +1,63 @@
+<div class="modal fade" id="Modal-SignIn" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <h2 class="modal-title text-center"><%= t("modals.signin") %></h2>
+              <br>
+
+              <form class="signin" action="index.php" method="post">
+                <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
+                <br>
+                <input type="password" name="password" value="" placeholder="<%= t("modals.password") %>" required="" class="form-control" />
+                <br>
+
+                <button type="submit" class="btn btn-primary"><%= t("action.ok") %></button>
+                <a href="#forgin-password" data-action="Forgot-Password"><%= t("modals.password_recovery") %></a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="Modal-Registration" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <h2 class="modal-title text-center"><%= t("modals.registration") %></h2>
+              <br>
+
+              <form class="join" action="index.php" method="post">
+                <input type="text" name="name" value="" placeholder="<%= t("modals.name") %>" required="" class="form-control" />
+                <br>
+
+                <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
+                <br>
+
+                <input type="password" name="password" value="" placeholder="<%= t("modals.password") %>" required="" class="form-control" />
+                <br>
+
+                <input type="text" name="confirm" value="" placeholder="<%= t("modals.password_again") %>" required="" class="form-control" />
+                <br>
+
+                <button type="submit" class="btn btn-primary btn-sm"><%= t("action.ok") %></button> &nbsp;&nbsp;
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>

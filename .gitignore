@@ -32,12 +32,13 @@ bower.json
 .powenv
 
 .byebug_history
-
+spec/
 node_modules/
 
 /public/packs
 /public/packs-test
 /public/assets
+app/assets/images/
 
 /yarn-error.log
 yarn-debug.log*
@@ -49,3 +50,9 @@ yarn-debug.log*
 .framgia-ci-reports/
 .framgia-ci-result.temp.yml
 /config/database.yml
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  scope "(:locale)", locale: /en|vi/ do
+    root "pages#index"
+    get "store" => "pages#store"
+    get "blog" => "pages#blog"
+    get "suggest" => "pages#suggest"
+    get "favorites" => "pages#favorites"
+  end
 end

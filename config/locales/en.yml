@@ -1,33 +1,80 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  locale:
+    en: "English"
+    vi: "Vietnamese"
+  index:
+    title: "Hot trend Laptops"
+  banners:
+    title: "Provide lightweight and powerull"
+    title2: "New amazing"
+    title3: "laptops"
+    button: "More products"
+  modals:
+    signin: "Sign In"
+    password_recovery: "Password recovery"
+    password: "Password"
+    registration: "Registration"
+    name: "Name"
+    password_again: "Password Againt"
+  products:
+    details: "Details"
+    name: "name of product"
+    price: "price of product"
+  caterogies:
+    category: "Category"
+  action:
+    view_all: "VIEW ALL"
+    add_to_cart: "Add to cart"
+    search: "Search"
+    clear: "Clear"
+    send: "Send"
+    ok: "OK"
+  favorites:
+    favorite: "Favorite"
+    favorite_title: "Your Favorites"
+  store:
+    sorting: "Sorting"
+    price_low: "Price [Low-High]"
+    price_high: "Price [High-Low]"
+    search_by_name: "Search by name"
+  suggest:
+    title: "Have you product any?"
+    title2: "Please insert products to a form below."
+  menu:
+    name_website: "Unistore Pro"
+    home: "Home"
+    categories: "Categories"
+    suggest: "Suggest"
+  footer:
+    ft1: "24/7 free"
+    ft2: "support"
+    ft3: "Low price"
+    ft4: "guarantee"
+    ft5: "Manufacturer’s"
+    ft6: "warranty"
+    ft7: "Full refund"
+    ft8: "guarantee"
+    ft9: "Join our newsletter"
+    ft10: "Get more information and receive special discounts for our products."
+    ft11: "Subscribe"
+    ft12: "Information"
+    ft13: "About"
+    ft14: "Terms"
+    ft15: "How to order"
+    ft16: "Delivery"
+    ft17: "Products"
+    ft18: "Laptops"
+    ft19: "Tablets"
+    ft20: "Servers"
+    ft21: "Returns"
+    ft22: "FAQ"
+    ft23: "Contacts"
+    ft24: "Location"
+    ft25: "Language"
+    ft26: "Currency"
+    ft27: "Unistore Pro, Inc."
+    ft28: "1305 Market Street, Suite 800"
+    ft29: "San Francisco, CA 94102"
+    ft30: "sup@example.com"
+    ft31: "Pay your order in the most convenient way"
+    ft32: "Unistore Pro © 2020"

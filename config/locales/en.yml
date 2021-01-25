@@ -16,6 +16,12 @@ en:
     registration: "Registration"
     name: "Name"
     password_again: "Password Againt"
+    remember: "Remember me"
+    create_my_account: "Create my account"
+    forgot_pass: "Forgot password"
+    new_user: "New User?"
+    profile: "Profile"
+    reset_pass: "Reset password"
   products:
     details: "Details"
     name: "name of product"
@@ -29,6 +35,9 @@ en:
     clear: "Clear"
     send: "Send"
     ok: "OK"
+    save: "Save"
+    login: "Log in"
+    logout: "Log out"
   favorites:
     favorite: "Favorite"
     favorite_title: "Your Favorites"

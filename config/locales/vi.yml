@@ -16,6 +16,7 @@ vi:
     registration: "Đăng ký"
     name: "Tên"
     password_again: "Nhập lại mật khẩu"
+    remember: "Nhớ đăng nhập"
   products:
     details: "Chi tiết"
     name: "tên sản phẩm"
@@ -29,6 +30,8 @@ vi:
     clear: "Xóa"
     send: "Gửi"
     ok: "OK"
+    login: "Đăng nhập"
+    logout: "Đăng xuất"
   favorites:
     favorite: "Yêu thích"
     favorite_title: "Yêu thích của bạn"

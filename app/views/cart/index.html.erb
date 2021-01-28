@@ -1,0 +1,110 @@
+<hr class="offset-lg"><hr class="offset-lg">
+<div class="box">
+  <div class="container">
+    <h1><%= t("carts.your_cart") %></h1>
+    <hr class="offset-sm">
+  </div>
+</div>
+<hr class="offset-md">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+    </div>
+    <% if @cart.any? %>
+      <div class="col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="checkout-cart">
+              <div class="content">
+                <% @cart.each do |pro_id, quantity| %>
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                      <%= image_tag "products/chrome-book-11.jpg", class: "media-object" %>
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h2 class="h4 media-heading"><%= get_product_name pro_id %></h2>
+                      <p class="price"><%= number_to_currency(get_product_price pro_id ) %></p>
+                    </div>
+                    <%= form_tag cart_path(pro_id), method: :patch do %>
+                    <div class="controls">
+                        <b><%= t("carts.quantity") %>:</b>
+                        <div class="input-group">
+                          <%= number_field_tag :qty, quantity, class: "form-control input-sm", min: Settings.carts.update_qty_min, max: Settings.carts.update_qty_max %>
+                          <span class="input-group-btn">
+                            <%= submit_tag t("action.ok"), class: "btn btn-default btn-sm" %>
+                          </span>
+                        </div>
+                      <% end %>
+                      <span class="input-group-btn">
+                        <%= form_tag remove_cart_item_path(pro_id) do %>
+                          <%= submit_tag t("action.clear"), class: "btn btn-danger ion-trash-b", onclick: t("action.confirm") %>
+                        <% end %>
+                      </span>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <%= link_to t("action.destroy"), remove_cart_all_item_path, class: "btn btn-danger", data: { confirm: t("message.destroy_confirm") } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8 col-md-4">
+        <hr class="offset-md visible-sm">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h2 class="no-margin"><%= t("carts.summary") %></h2>
+            <hr class="offset-md">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-6">
+                  <p><%= t("carts.count_item", count: count_item) %></p>
+                </div>
+                <div class="col-xs-6">
+                  <p><b><%= number_to_currency(subtotal) %></b></p>
+                </div>
+              </div>
+            </div>
+            <hr>
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-6">
+                  <h3 class="no-margin"><%= t("carts.total_sum") %></h3>
+                </div>
+                <div class="col-xs-6">
+                  <h3 class="no-margin subtotal"><%= number_to_currency(subtotal) %></h3>
+                </div>
+              </div>
+            </div>
+            <hr class="offset-md">
+
+            <a href="../checkout/" class="btn btn-primary btn-lg justify"><i
+                class="ion-android-checkbox-outline"></i>&nbsp;&nbsp; <%= t("carts.checkout_order") %></a>
+            <hr class="offset-md">
+
+            <p><%= t("carts.pay_desc") %></p>
+            <div class="payment-icons">
+              <%= image_tag "payments/icon-paypal.svg" %>
+              <%= image_tag "payments/icon-visa.svg" %>
+              <%= image_tag "payments/icon-mc.svg" %>
+              <%= image_tag "payments/icon-discover.svg" %>
+              <%= image_tag "payments/icon-ae.svg" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="col-md-12">
+        <h5 class="text-center font-italic"><%= t("carts.empty") %></h1>
+      </div>
+    <% end %>
+  </div>
+</div>
+<hr class="offset-lg">
+<hr class="offset-lg">

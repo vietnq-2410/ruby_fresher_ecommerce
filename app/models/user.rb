@@ -40,10 +40,12 @@ class User < ApplicationRecord
     BCrypt::Password.new(digest).is_password? token
   end
 
-  def create_reset_digest
-    self.reset_token = User.new_token
-    update_columns reset_digest: User.digest(reset_token),
-      reset_sent_at: Time.zone.now
+  def activate
+    update_columns activated: true, activated_at: Time.zone.now
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
   end
 
   private

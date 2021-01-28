@@ -6,3 +6,10 @@ carts:
   update_qty_min: 1
   update_qty_max: 10
 paginate: 8
+order:
+  ship_method:
+    quick_ship: 1
+    normal_ship: 2
+  pay_method:
+    pay_pal: 1
+    pay_money: 2

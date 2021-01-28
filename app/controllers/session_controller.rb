@@ -30,11 +30,10 @@ class SessionController < ApplicationController
     if user.activated?
       log_in user
       handler_remember user
-      redirect_back_or user
     else
       message = t "message.not_activate"
       flash[:warning] = message
-      redirect_to root_path
     end
+    redirect_to root_path
   end
 end

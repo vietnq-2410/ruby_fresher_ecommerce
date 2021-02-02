@@ -2,3 +2,7 @@ user:
   name:
     min_length: 6
 reset_pass_expired_time: 2
+carts:
+  update_qty_min: 1
+  update_qty_max: 10
+paginate: 8

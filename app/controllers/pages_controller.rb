@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
-  def index; end
+  def index
+    @products = Product.sort_desc.paginate(page: params[:page],
+      per_page: Settings.paginate)
+  end
 
   def store; end
 

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
     resources :users
+    resources :cart
+    post "remove-cart-item/:id" => "cart#remove_cart_item", as: "remove_cart_item"
+    get "remove-cart-all-item" => "cart#remove_all_item"
     resources :account_activations, only: :edit
     resources :password_resets, except: %i(index show destroy)
   end

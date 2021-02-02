@@ -8,7 +8,7 @@
     <%= link_to t("menu.name_website"), root_path, class: "navbar-brand" %>
   </div>
 
-  <div id="navbar" class="navbar-collapse collapse">
+  <div id="navbar" style="height:50px;" class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
       <li class=""><%= link_to t("menu.home"), root_path, class: "active" %></li>
       <li class="dropdown">
@@ -19,6 +19,7 @@
       </li>
       <li><%= link_to t("menu.store"), store_path %></li>
       <li><%= link_to t("menu.suggest"), suggest_path %></li>
+      <li><%= link_to t("menu.cart"), cart_index_path %></li>
     </ul>
   </div>
 </div>

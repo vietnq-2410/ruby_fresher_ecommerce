@@ -30,22 +30,10 @@
     <h2 class="h2 upp align-center"> <%= t("index.title") %> </h2>
     <hr class="offset-lg">
     <div class="row">
-
-      <div class="col-sm-6 col-md-3 product">
-        <div class="body">
-          <a href="#favorites" class="favorites" data-favorite="inactive"><i class="ion-ios-heart-outline"></i></a>
-          <%= link_to image_tag "products/apple-imac-27-retina.jpg" %>
-
-          <div class="content align-center">
-            <p class="price">$<%= t("products.price") %></p>
-            <h2 class="h3"><%= t("products.name") %></h2>
-            <hr class="offset-sm">
-            <button class="btn btn-link"> <i class="ion-android-open"></i> <%= t("products.details") %></button>
-            <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i><%= t("action.add_to_cart") %></button>
-          </div>
-        </div>
-      </div>
-
+      <%= render partial: "products/products", collection: @products, as: "pro" %>
+    </div>
+    <div class="col-md-12 justify-content-center text-center">
+      <%= will_paginate @products, previous_label: "&#8592;", next_label: "&#8594;" %>
     </div>
     <div class="align-right align-center-xs">
       <hr class="offset-sm">

@@ -1,0 +1,26 @@
+<h4 class="text-center alert alert-info"><%= t("admin.order_manage") %></h4>
+<%= render "admin/admin_shared/error" %>
+<table class="table table table-bordered">
+  <thead>
+    <tr>
+      <td><%= t("orders.customer_name_table") %></td>
+      <td><%= t("orders.status_table.status") %></td>
+      <td><%= t("orders.payment_status_table.payment_status") %></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% get_list_order.each do |order| %>
+      <tr>
+        <td><%= order.customer_name %></td>
+        <td><%= t("orders.status_table.#{order.status}")%></td>
+        <td><%= t("orders.payment_status_table.#{order.payment_status}") %></td>
+        <td>
+          <%= link_to admin_order_path(order.id) do %>
+            <i class="ion-eye"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

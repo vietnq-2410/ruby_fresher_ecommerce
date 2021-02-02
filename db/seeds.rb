@@ -1,10 +1,18 @@
 User.create!(name: "Nguyen Quoc Viet",
-  email: "vietnq812@gmail.com")
+  email: "vietnq812@gmail.com",
+  password: "123123123",
+  password_confirmation: "123123123",
+  role: 1,
+  activated: 1, activated_at: Time.zone.now)
 20.times do |n|
 name = Faker::Name.name
 email = "example-#{n + 1}@gmail.com"
 User.create!(name: name,
-  email: email)
+  email: email,
+  password: "password",
+  password_confirmation: "password",
+  role: 0,
+  activated: 1, activated_at: Time.zone.now)
 end
 
 Category.create!(name: "Category 1")
@@ -16,7 +24,7 @@ Category.create!(name: "Category 1")
 end
 
 20.times do |n|
-  category_idProduct = n
+  category_idProduct = n + 1
   nameProduct = "Product #{n}"
   descriptionProduct = "description of product"
   viewProduct = n*1000

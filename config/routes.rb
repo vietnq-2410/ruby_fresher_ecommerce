@@ -17,5 +17,9 @@ Rails.application.routes.draw do
     get "remove-cart-all-item" => "cart#remove_all_item"
     resources :account_activations, only: :edit
     resources :password_resets, except: %i(index show destroy)
+    namespace :admin do
+      get "/" => "admins#dashboard"
+      resources :orders
+    end
   end
 end

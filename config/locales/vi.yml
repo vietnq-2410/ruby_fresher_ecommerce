@@ -30,10 +30,11 @@ vi:
     clear: "Xóa"
     send: "Gửi"
     ok: "OK"
+    save: "Lưu"
     login: "Đăng nhập"
     logout: "Đăng xuất"
     added_cart: "alert('Đã thêm vào giỏ hàng')"
-    confirm: "alert('Chắc chưa?')"
+    confirm: "Chắc chưa?"
     destroy: "Giỏ này coi như bỏ"
     confirm_order: "Xác nhận đặt hàng"
   message:
@@ -46,6 +47,9 @@ vi:
     error_to_page: "Lỗi ! vui lòng thử lại"
     order_success: "Đặt hàng thành công"
     order_fail: "Đặt hàng thất bại, vui lòng thử lại"
+    update_success: "Cập nhật thành công!"
+    update_failed: "Cập nhật không thành công!"
+    not_admin: "Bạn không phải quản trị viên"
   carts:
     your_cart: "Giỏ hàng của bạn:"
     summary: "Tạm tính"
@@ -57,6 +61,7 @@ vi:
     empty: "Giỏ hàng của bạn trống"
     quantity: "Số lượng"
   orders:
+    details: "Chi tiết đơn hàng"
     delevery_address: "Thông tin giao hàng"
     edit_info: "Chỉnh sửa thông tin"
     delevery_option: "Phương thức giao hàng"
@@ -69,6 +74,32 @@ vi:
     pay_method:
       1: "Thanh toán bằng PayPal"
       2: "Thanh toán khi nhận hàng"
+    customer_name_table: "Tên khách hàng"
+    status_table:
+      status: "Trạng thái"
+      "0": "Đang chờ"
+      "1": "Đã xác nhận"
+      "2": "Đang giao"
+      "3": "Hoàn thành"
+      "4": "Đã hủy"
+    payment_status_table:
+      payment_status: "Trạng thái thanh toán"
+      "0": "Chưa thanh toán"
+      "1": "Đã trả tiền"
+    phone: "Điện thoại"
+    address: "Địa chỉ"
+    status:
+      waiting: "Đang chờ"
+      confirmed: "Đã xác nhận"
+      delivering: "Đang giao"
+      finish: "Hoàn thành"
+      cancelled: "Hủy"
+    payment_status:
+      unpaid: "Chưa thanh toán"
+      paid: "Đã thanh toán"
+  ship_price:
+    1: 50
+    2: 100
   favorites:
     favorite: "Yêu thích"
     favorite_title: "Yêu thích của bạn"
@@ -85,6 +116,13 @@ vi:
     home: "Trang chủ"
     categories: "Danh mục"
     suggest: "Đề xuất"
+    dashboard: "Trang tổng quan"
+    categories: "Danh mục"
+    products: "Sản phẩm"
+    orders: "Đơn đặt hàng"
+    users: "Người dùng"
+  admins:
+    order_manage: "Quản lý đơn hàng"
   footer:
     ft1: "24/7 miễn phí"
     ft2: "hỗ trợ"

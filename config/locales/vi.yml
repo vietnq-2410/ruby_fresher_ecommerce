@@ -21,6 +21,7 @@ vi:
     details: "Chi tiết"
     name: "tên sản phẩm"
     price: "giá của sản phẩm"
+    recommendation: "Đề xuất cho bạn"
   caterogies:
     category: "Danh mục"
   action:

@@ -1,0 +1,47 @@
+<hr class="offset-lg">
+<hr class="offset-lg">
+<hr class="offset-lg hidden-xs">
+<div class="product">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-7 col-md-7">
+        <%= image_tag "product/1.jpg", class: "img-responsive" %>
+      </div>
+      <div class="col-sm-5 col-md-5">
+        <h1><%= @product.name %></h1>
+        <h3><%= @product.category_name %></h3>
+        <p class="price"><%= number_to_currency(@product.price) %></p>
+        <p class="price through"><%= calculator_old_price %></p>
+        <br><br>
+        <%= form_tag cart_index_path, remote: true do %>
+          <%= hidden_field_tag :product_id, @product.id %>
+          <%= submit_tag t("action.add_to_cart"), class: "btn btn-primary btn-sm rounded", onclick: t("action.added_cart") %>
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-sm-7">
+        <h1><%= @product.name %></h1>
+          <br>
+
+          <p>
+            <%= @product.description %>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+
+<section class="products">
+  <div class="container">
+    <h1 class="h3"><%= t("products.recommendation") %></h1>
+    
+    <div class="row">
+      <%= render partial: "products/products", collection: @products_same_category, as: :pro  %>
+    </div>
+  </div>
+</section>
+<br><br>

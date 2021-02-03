@@ -1,0 +1,149 @@
+<hr class="offset-md"><hr class="offset-lg">
+<div class="box">
+  <div class="container offset-md">
+      <h1><%= t("carts.checkout_order") %></h1>
+  </div>
+</div>
+
+<%= form_tag order_index_path do %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+      </div>
+      <div class="col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="checkout">
+              <div class="box-select">
+                <h2> 1. <%= t("orders.delevery_address") %></h2>
+                <address class="box-default sm-padding" data-style="selected">
+                  <div class="form-group">
+                    <%= label_tag :customer_name %>
+                    <%= text_field_tag :customer_name, nil, class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <%= label_tag :phone %>
+                    <%= text_field_tag :phone, nil, class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <%= label_tag :address %>
+                    <%= text_area_tag :address, nil, class: "form-control" %>
+                  </div>
+                </address>
+                <hr class="offset-sm">
+                <hr>
+              </div>
+              <div class="delivery box-select">
+                <h2> 2. <%= t("orders.delevery_option") %> </h2>
+                <hr class="offset-sm">
+
+                <div class="row"> 
+                  <div class="col-md-6">
+                    <div class="box-default sm-padding" data-style="selected">
+                      <hr class="offset-sm">
+                      <%= image_tag "shipping/fedex.jpg" %>
+                      <span>&nbsp;&nbsp;<%= t("orders.ship_method.1") %></span>
+                      <div class="check">
+                          <%= radio_button_tag :ship_method, Settings.order.ship_method.quick_ship %>
+                      </div>
+                      <hr class="offset-sm">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="box-default sm-padding">
+                      <hr class="offset-sm">
+                      <%= image_tag "shipping/dhl.jpg" %>
+                      <span>&nbsp;&nbsp;<%= t("orders.ship_method.2") %></span>
+                      <div class="check">
+                          <%= radio_button_tag :ship_method, Settings.order.ship_method.normal_ship %>
+                      </div>
+                      <hr class="offset-sm">
+                    </div>
+                  </div>
+                </div>
+                <hr class="offset-sm">
+                <hr>
+              </div>
+              <div class="payment box-select">
+                <h2> 3. <%= t("orders.payment") %> </h2>
+                <hr class="offset-sm">
+                <div class="row"> 
+                  <div class="col-md-6">
+                    <div class="box-default sm-padding" data-style="selected">
+                      <hr class="offset-sm">
+                      <%= image_tag "payments/paypal.jpg" %>
+                      <span>&nbsp;&nbsp;<%= t("orders.pay_method.1") %></span>
+                      <div class="check">
+                          <%= radio_button_tag :pay_method, Settings.order.pay_method.pay_pal %>
+                      </div>
+                      <hr class="offset-sm">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="box-default sm-padding">
+                      <hr class="offset-sm">
+                      <%= image_tag "payments/bacho.png" %>
+                      <span>&nbsp;&nbsp;<%= t("orders.pay_method.2") %></span>
+                      <div class="check">
+                        <%= radio_button_tag :pay_method, Settings.order.pay_method.pay_money %>
+                      </div>
+                      <hr class="offset-sm">
+                    </div>
+                  </div>
+                </div>
+                <hr class="offset-sm">
+                <hr>
+              </div>
+              <div class="payment box-select">
+                <h2> 4. <%= t("orders.note") %> </h2>
+                <hr class="offset-sm">
+                <%= text_area_tag :note, nil, class: "form-control" %>
+                <hr class="offset-sm">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8 col-md-4">
+        <hr class="offset-sm visible-sm">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h2 class="no-margin"><%= t("carts.summary") %>  ($)</h2>
+            <hr class="offset-md">
+            <%= render "cart/summary" %>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-6">
+                  <p><%= t("orders.ship_price") %>:</p>
+                </div>
+                <div class="col-xs-6">
+                  <p><b id="ship_price">$0</b></p>
+                </div>
+              </div>
+            </div>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-6">
+                  <h3 class="no-margin"><%= t("carts.total_sum") %>:</h3>
+                </div>
+                <div class="col-xs-6">
+                  <h3 class="no-margin"><i id="total_sum"></i></h3>
+                </div>
+              </div>
+            </div>
+            <hr class="offset-md">
+            <%= submit_tag t("action.confirm_order"), class: "btn btn-primary btn-lg justify" do %>
+              <i class="ion-compose"></i>&nbsp;&nbsp;
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<hr class="offset-lg">
+<hr class="offset-lg">
+<%= javascript_pack_tag "total_price", "data-turbolinks-track": "reload" %>

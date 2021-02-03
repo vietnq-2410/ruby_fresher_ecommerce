@@ -46,7 +46,7 @@ class CartController < ApplicationController
 
     return if product
 
-    flas[:warning] = "Da co loi, hay load lai page"
+    flas[:warning] = t "message.error_to_page"
     redirect_to cart_index_path
   end
 end

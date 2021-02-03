@@ -60,18 +60,7 @@
           <div class="panel-body">
             <h2 class="no-margin"><%= t("carts.summary") %></h2>
             <hr class="offset-md">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xs-6">
-                  <p><%= t("carts.count_item", count: count_item) %></p>
-                </div>
-                <div class="col-xs-6">
-                  <p><b><%= number_to_currency(subtotal) %></b></p>
-                </div>
-              </div>
-            </div>
-            <hr>
-
+            <%= render "summary" %>
             <div class="container-fluid">
               <div class="row">
                 <div class="col-xs-6">
@@ -83,9 +72,15 @@
               </div>
             </div>
             <hr class="offset-md">
-
-            <a href="../checkout/" class="btn btn-primary btn-lg justify"><i
-                class="ion-android-checkbox-outline"></i>&nbsp;&nbsp; <%= t("carts.checkout_order") %></a>
+            <% if logged_in? %>
+              <%= link_to order_index_path, class: "btn btn-primary btn-lg justify" do %>
+                <i class="ion-android-checkbox-outline"></i> <%= t("carts.checkout_order") %>
+              <% end %>
+            <% else %>
+              <a href="#" class="btn btn-primary btn-lg justify">
+                <i class="ion-android-checkbox-outline"></i> <%= t("message.must_loggin") %>
+              </a>
+            <% end %>
             <hr class="offset-md">
 
             <p><%= t("carts.pay_desc") %></p>

@@ -1,0 +1,114 @@
+<h4 class="text-center alert alert-info"><%= t("admin.order_manage") %></h4>
+<h3>Order of <%= @order.customer_name %>:</h3>
+<%= render "admin/admin_shared/error" %>
+<div class="col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="checkout">
+        <div class="box-select">
+          <h3><%= t("orders.delevery_address") %></h3>
+          <address class="box-default sm-padding" data-style="selected">
+            <p><%= t("orders.address") %><%= @order.address %>, </p>
+          </address>
+          <address class="box-default sm-padding" data-style="selected">
+            <p><%= t("orders.phone") %>:<%= @order.phone %></p>
+          </address>
+          <hr class="offset-sm">
+          <hr>
+        </div>
+        <div class="delivery box-select">
+          <h3> <%= t("orders.delevery_option") %> </h3>
+          <hr class="offset-sm">
+
+          <div class="row"> 
+            <address class="box-default sm-padding" data-style="selected">
+              <p><%= t("orders.ship_method.#{@order.ship_method.to_s}") %></p>
+            </address>
+            <address class="box-default sm-padding" data-style="selected">
+              <p><%= number_to_currency(t("ship_price.#{@order.ship_method.to_s}"))  %></p>
+            </address>
+          </div>
+          <hr class="offset-sm">
+          <hr>
+        </div>
+        <div class="payment box-select">
+          <h3><%= t("orders.payment") %> </h3>
+          <hr class="offset-sm">
+          <div class="row"> 
+            <address class="box-default sm-padding" data-style="selected">
+              <p><%= t("orders.pay_method.#{@order.pay_method.to_s}") %></p>
+            </address>
+          </div>
+          <hr class="offset-sm">
+          <hr>
+        </div>
+        <div class="payment box-select">
+          <h3><%= t("orders.note") %> </h3>
+          <hr class="offset-sm">
+          <div class="row"> 
+            <address class="box-default sm-padding" data-style="selected">
+              <p><%= @order.note %></p>
+            </address>
+          </div>
+          <hr class="offset-sm">
+          <hr>
+        </div>
+        <div class="payment box-select">
+          <h3><%= t("orders.details") %> </h3>
+          <hr class="offset-sm">
+          <table class="table table table-bordered">
+            <thead>
+              <tr>
+                <td><%= t("orders.product_name_table") %></td>
+                <td><%= t("orders.quantity_table") %></td>
+                <td><%= t("orders.price_table") %></td>
+                <td><%= t("orders.subtotal_table") %></td>
+              </tr>
+            </thead>
+            <tbody>
+              <% @order.order_details.includes(:product).each do |ord| %>
+                <tr>
+                  <td><%= ord.product_name %></td>
+                  <td><%= ord.quantity %></td>
+                  <td><%= number_to_currency(ord.price) %></td>
+                  <td><%= subtotal_order_admin ord.quantity, ord.price %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <b><%= t("orders.subtotal_table") %> : <%= total_order_admin %> </b>
+          <hr class="offset-sm">
+        </div>
+      </div>
+      <% if @order.finish? || @order.cancelled? %>
+        <div class="row">
+          <div class="col-md-4">
+            <i><%= t("orders.status_table.status") %>:</i><br>
+            <p class="text-warning"><%= t("orders.status_table.#{@order.status}") %></p>
+          </div>
+          <div class="col-md-4">
+            <i><%= t("orders.payment_status_table.payment_status") %>:</i><br>
+            <p class="text-danger"><%= t("orders.payment_status_table.#{@order.payment_status}") %></p>
+          </div>
+        </div>
+      <% else %>
+        <div class="row">
+          <%= form_tag admin_order_path(@order.id), method: :PATCH do %>
+            <div class="col-md-4">
+              <i><%= t("orders.status_table.status") %>:</i><br>
+              <%= select_tag :status, options_for_select(option_for_status, @order.status), class: "form-control" if @order.status %>
+            </div>
+            <div class="col-md-4">
+              <i><%= t("orders.payment_status_table.payment_status") %>:</i><br>
+              <%= select_tag :payment_status, options_for_select(option_for_payment_status, @order.payment_status), class: "form-control" %>
+            </div>
+            <div class="col-md-4">
+            <br>
+              <%= submit_tag t("action.save"), class: "btn btn-primary", data: {confirm: t("action.confirm") } %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -13,3 +13,13 @@ order:
   pay_method:
     pay_pal: 1
     pay_money: 2
+  status:
+    waiting: 0
+    confirmed: 1
+    delivering: 2
+    finish: 3
+    cancelled: 4
+  payment_status:
+    unpaid: 0
+    paid: 1
+admin_role: 1

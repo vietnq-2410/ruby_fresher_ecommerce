@@ -40,7 +40,7 @@ en:
     login: "Log in"
     logout: "Log out"
     added_cart: "alert('Product added!')"
-    confirm: "alert('You sure?')"
+    confirm: "You sure?"
     destroy: "Destroy"
     confirm_order: "Confirm order"
   message:
@@ -53,6 +53,9 @@ en:
     error_to_page: "Error! Please reload page"
     order_success: "Order Success!"
     order_fail: "Order failed! Please try again"
+    update_success: "Update success!"
+    update_failed: "Update failed!"
+    not_admin: "You are not admin!"
   carts:
     your_cart: "Your cart:"
     summary: "Summary"
@@ -64,6 +67,7 @@ en:
     empty: "Your cart is empty"
     quantity: "Quantity"
   orders:
+    details: "Detail's order"
     delevery_address: "Delevery address"
     edit_info: "Edit infomation"
     delevery_option: "Delevery option"
@@ -76,6 +80,37 @@ en:
     pay_method:
       1: "Pay with paypal"
       2: "Payment on delivery"
+    customer_name_table: "Name's customer"
+    status_table:
+      status: "Status"
+      "0": "Waiting"
+      "1": "Confirmed"
+      "2": "Delivering"
+      "3": "Finish"
+      "4": "Cancelled"
+    payment_status_table:
+      payment_status: "Payment status"
+      "0": "Unpaid"
+      "1": "Paid"
+    phone: "Phone"
+    address: "Address"
+    product_name_table: "Name's product"
+    quantity_table: "Quantity"
+    subtotal_table: "Total"
+    price_table: "Price"
+    price_ship_table: "Price's ship"
+    status:
+      waiting: "Waiting"
+      confirmed: "Confirmed"
+      delivering: "Delivering"
+      finish: "Finish"
+      cancelled: "Cancel"
+    payment_status:
+      unpaid: "Unpaid"
+      paid: "Paid"
+  ship_price:
+    1: 50
+    2: 100
   favorites:
     favorite: "Favorite"
     favorite_title: "Your Favorites"
@@ -92,6 +127,13 @@ en:
     home: "Home"
     categories: "Categories"
     suggest: "Suggest"
+    dashboard: "Dashboard"
+    categories: "Categories"
+    products: "Products"
+    orders: "Orders"
+    users: "Users"
+  admins:
+    order_manage: "Orders manage"
   footer:
     ft1: "24/7 free"
     ft2: "support"

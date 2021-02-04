@@ -26,6 +26,7 @@ en:
     details: "Details"
     name: "name of product"
     price: "price of product"
+    recommendation: "Recommendation for you"
   caterogies:
     category: "Category"
   action:

@@ -6,9 +6,11 @@
       <p class="price"><%= number_to_currency(pro.price) %></p>
       <h2 class="h3"><%= pro.name %></h2>
       <hr class="offset-sm">
-      <button class="btn btn-link"> <i class="ion-android-open"></i> <%= t("products.details") %></button>
+      <%= link_to product_path(pro.id) do %>
+        <i class="ion-android-open"></i> <%= t("products.details") %>
+      <% end %>
+      <button class="btn btn-link"> </button>
       <%= form_tag cart_index_path, remote: true do %>
-        <%= hidden_field_tag :cart_id, @current_user.id if logged_in? %>
         <%= hidden_field_tag :product_id, pro.id %>
         <%= submit_tag t("action.add_to_cart"), class: "btn btn-primary btn-sm rounded", onclick: t("action.added_cart") %>
       <% end %>

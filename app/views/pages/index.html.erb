@@ -30,14 +30,12 @@
     <h2 class="h2 upp align-center"> <%= t("index.title") %> </h2>
     <hr class="offset-lg">
     <div class="row">
-      <%= render partial: "products/products", collection: @products, as: "pro" %>
-    </div>
-    <div class="col-md-12 justify-content-center text-center">
-      <%= will_paginate @products, previous_label: "&#8592;", next_label: "&#8594;" %>
+      <%= render partial: "products/products", collection: get_trending_products, as: "pro" %>
     </div>
     <div class="align-right align-center-xs">
       <hr class="offset-sm">
-      <%= link_to store_path do %>
+      <a href="./store/">  </a>
+      <%= link_to store_path do  %>
         <h5 class="upp"><%= t("action.view_all") %></h5>
       <% end %>
     </div>

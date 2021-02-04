@@ -57,6 +57,12 @@ vi:
     update_success: "Cập nhật thành công!"
     update_failed: "Cập nhật không thành công!"
     not_admin: "Bạn không phải quản trị viên"
+    filter_result:
+      price_desc: "Giá sản phẩm từ cao tới thấp"
+      price_asc: "Giá sản phẩm từ thấp tới cao"
+      search_by_name: "Kết quả tìm kiếm sản phẩm: '%{filter}' "
+      by_category: "Các sản phẩm thuộc danh mục: %{category}"
+      not_result: "Không có kết quả nào"
   carts:
     your_cart: "Giỏ hàng của bạn:"
     summary: "Tạm tính"

@@ -5,5 +5,8 @@ class Product < ApplicationRecord
   delegate :name, to: :category, prefix: true
   scope :sort_desc, ->{order(created_at: :desc)}
   scope :by_ids, ->(id){where(id: id)}
-  scope :same_category, ->(category_id){where("category_id = ?", category_id)}
+  scope :sort_view, ->{order(view: :desc).limit Settings.trending_products}
+  scope :sort_price, ->(sort_type){order(price: sort_type)}
+  scope :by_name, ->(name){where("name like ?", "%#{name}%")}
+  scope :by_category, ->(category_id){where("category_id = ?", category_id)}
 end

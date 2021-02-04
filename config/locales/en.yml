@@ -56,6 +56,12 @@ en:
     update_success: "Update success!"
     update_failed: "Update failed!"
     not_admin: "You are not admin!"
+    filter_result:
+      price_desc: "Product prices range from high to low"
+      price_asc: "Product prices range from low to high"
+      search_by_name: "Product search results: '%{name}' "
+      by_category: "Products under the category: %{category}"
+      not_result: "There is no result"
   carts:
     your_cart: "Your cart:"
     summary: "Summary"

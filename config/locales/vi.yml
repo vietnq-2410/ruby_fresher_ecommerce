@@ -28,6 +28,13 @@ vi:
     name: "tên sản phẩm"
     price: "giá của sản phẩm"
     recommendation: "Đề xuất cho bạn"
+    qty_left: "Còn lại %{qty} sản phẩm"
+    rate_question: "Bạn thấy sản phẩm này như thế nào?"
+    rate_suggest: "Vui lòng đánh giá sản phẩm của chúng tôi:" 
+    rates: "Có %{rates} đánh giá, trung bình: %{avg}"
+    your_rate: "Đánh giá của bạn: "
+    comment_question: "Bạn nghĩ sao về sản phẩm này?(#%{cmts})"
+    day_ago: "%{day} ngày trước"
   caterogies:
     category: "Danh mục"
   action:
@@ -44,6 +51,7 @@ vi:
     confirm: "Chắc chưa?"
     destroy: "Giỏ này coi như bỏ"
     confirm_order: "Xác nhận đặt hàng"
+    add_comment: "Bình luận"
   message:
     cart_update_success: "Đã cập nhật!"
     cart_update_fail: "Số lượng phải từ 1 đến 10"
@@ -63,6 +71,7 @@ vi:
       search_by_name: "Kết quả tìm kiếm sản phẩm: '%{filter}' "
       by_category: "Các sản phẩm thuộc danh mục: %{category}"
       not_result: "Không có kết quả nào"
+    rate_failed: "Đánh giá thất bại!"
   carts:
     your_cart: "Giỏ hàng của bạn:"
     summary: "Tạm tính"
@@ -90,11 +99,11 @@ vi:
     customer_name_table: "Tên khách hàng"
     status_table:
       status: "Trạng thái"
-      "0": "Đang chờ"
-      "1": "Đã xác nhận"
-      "2": "Đang giao"
-      "3": "Hoàn thành"
-      "4": "Đã hủy"
+      0: "Đang chờ"
+      1: "Đã xác nhận"
+      2: "Đang giao"
+      3: "Hoàn thành"
+      4: "Đã hủy"
     payment_status_table:
       payment_status: "Trạng thái thanh toán"
       "0": "Chưa thanh toán"
@@ -115,6 +124,7 @@ vi:
     payment_status:
       unpaid: "Chưa thanh toán"
       paid: "Đã thanh toán"
+    history: "Đơn hàng cuả bạn"
   ship_price:
     1: 50
     2: 100
@@ -139,12 +149,22 @@ vi:
     products: "Sản phẩm"
     orders: "Đơn đặt hàng"
     users: "Người dùng"
+    cart: "Giỏ hàng"
+    history: "Đơn hàng của bạn"
   admins:
     order_manage: "Quản lý đơn hàng"
   mails:
     send_order: "Chúng tôi đã nhận được đơn đặt hàng của bạn"
     dear: "Thân gửi"
     title_thank: "Cảm ơn bạn đã đặt hàng, các mặt hàng của bạn:"
+    acc_activation: "Kích hoạt tài khoản của bạn"
+    hi: "Chào!"
+    desc: "Nhấp vào liên kết này để kích hoạt tài khoản của bạn:"
+    activate: "Hoạt động"
+    reset_pass_subject: "Đặt lại mật khẩu cho bạn"
+    reset_text1: "Nhấp vào liên kết này để đặt lại mật khẩu"
+    reset_pass: "Đặt lại mật khẩu"
+    reset_text2: "Cảm ơn!"
   footer:
     ft1: "24/7 miễn phí"
     ft2: "hỗ trợ"

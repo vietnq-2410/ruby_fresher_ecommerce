@@ -38,7 +38,6 @@ node_modules/
 /public/packs
 /public/packs-test
 /public/assets
-app/assets/images/
 
 /yarn-error.log
 yarn-debug.log*
@@ -63,3 +62,5 @@ config/environments/*.local.yml
 
 # Ignore application configuration
 /config/application.yml
+
+/config/master.key

@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   has_many :orders, dependent: :destroy
+  has_many :rates, dependent: :destroy
+  has_many :comments, dependent: :destroy
   enum role: {user: 0, admin: 1}
+  delegate :rate, to: :rates, prefix: true
   attr_accessor :remember_token, :activation_token, :reset_token
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   before_save :downcase_email
@@ -8,15 +11,15 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true,
-    format: {with: VALID_EMAIL_REGEX}, uniqueness: true
+                    format: { with: VALID_EMAIL_REGEX }, uniqueness: true
   validates :password, presence: true
 
-  def self.digest string
+  def self.digest(string)
     cost = if ActiveModel::SecurePassword.min_cost
-             BCrypt::Engine::MIN_COST
-           else
-             BCrypt::Engine.cost
-           end
+        BCrypt::Engine::MIN_COST
+      else
+        BCrypt::Engine.cost
+      end
     BCrypt::Password.create string, cost: cost
   end
 
@@ -35,7 +38,7 @@ class User < ApplicationRecord
     update_column :remember_digest, User.digest(remember_token)
   end
 
-  def authenticated? attribute, token
+  def authenticated?(attribute, token)
     digest = send "#{attribute}_digest"
     return false if digest.nil?
 

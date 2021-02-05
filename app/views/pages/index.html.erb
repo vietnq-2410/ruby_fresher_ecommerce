@@ -47,7 +47,7 @@
       <h2 class="h2 upp align-center"> <%= t("index.viewed") %></h2>
       <hr class="offset-lg">
       <div class="row">
-        <%= render partial: "products/products", collection: session[:viewed], as: "pro" %>
+        <%= render partial: "products/products", collection: session[:viewed].uniq.reverse, as: :pro %>
       </div>
     </div>
   </section>

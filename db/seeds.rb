@@ -16,21 +16,22 @@ User.create!(name: name,
 end
 
 Category.create!(name: "Category 1")
-20.times do |n|
-  nameCategory = "Category #{n+1}"
-  parent_idCate = n
-  Category.create!(name: nameCategory,
+10.times do |n|
+  nameCategory = Faker::Appliance.brand
+  nameParent = Faker::Computer.os
+  parent_idCate = n +1
+  Category.create!(name: nameParent,
     parent_id: parent_idCate)
 end
 
 20.times do |n|
-  category_idProduct = n + 1
-  nameProduct = "Product #{n}"
-  descriptionProduct = "description of product"
-  viewProduct = n*1000
-  quantityProduct = n*10
-  priceProduct = n*12300
-  saleProduct = n
+  category_idProduct = Faker::Number.within(range: 1..10)
+  nameProduct = Faker::Device.model_name
+  descriptionProduct = Faker::Lorem.paragraph(sentence_count: 100)
+  viewProduct = Faker::Number.number(digits: 3)
+  quantityProduct = Faker::Number.number(digits: 2)
+  priceProduct = Faker::Number.number(digits: 6)
+  saleProduct = Faker::Number.between(from: 10, to: 20)
   Product.create!(category_id: category_idProduct,
     name: nameProduct,
     description: descriptionProduct,
@@ -40,19 +41,19 @@ end
     sale: saleProduct)
 end
 
-20.times do |n|
-  user_idComment = n
-  productidComment = n
-  commentComment = "comment#{n}"
+50.times do |n|
+  user_idComment = Faker::Number.within(range: 1..20)
+  productidComment = Faker::Number.within(range: 1..20)
+  commentComment = Faker::Lorem.paragraph(sentence_count: 1)
   Comment.create!(user_id: user_idComment,
     product_id: productidComment,
     comment: commentComment)
 end
 
 20.times do |n|
-  user_idRate = n
-  product_idRate = n
-  rate = 4.5
+  user_idRate = Faker::Number.within(range: 1..20)
+  product_idRate = Faker::Number.within(range: 1..20)
+  rate = Faker::Number.within(range: 1..5)
   Rate.create!(user_id: user_idRate,
     product_id: product_idRate,
     rate: rate)

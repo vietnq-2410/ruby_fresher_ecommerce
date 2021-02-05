@@ -1,0 +1,92 @@
+<hr class="offset-md"><hr class="offset-lg">
+<div class="box">
+  <div class="container offset-md">
+      <h1><%= t("orders.history") %></h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="col-md-12">
+      <table class="table table table-bordered">
+        <thead>
+          <tr>
+            <td><%= t("orders.customer_name_table") %></td>
+            <td><%= t("orders.status_table.status") %></td>
+            <td><%= t("orders.payment_status_table.payment_status") %></td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <% get_list_order.each do |order| %>
+            <tr>
+              <td><%= order.customer_name %></td>
+              <td><%= t("orders.status_table.#{order.status}")%></td>
+              <td><%= t("orders.payment_status_table.#{order.payment_status}") %></td>
+              <td>
+                <ul class="nav nav-pills">
+                  <li>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal<%= order.id %>">
+                      <i class="ion-eye"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <%= form_tag order_path(order.id), method: :PATCH do %>
+                      <%= hidden_field_tag :order_id, order.id %>
+                      <button onclick="return confirm('OK?')" type="submit" class="btn btn-danger btn-sm">
+                        <i class="ion-close-circled"></i>
+                      </button>
+                    <% end %>
+                  </li>
+                </ul>
+                <div class="modal fade" id="myModal<%= order.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"><%= t("orders.details") %></h4>
+                      </div>
+                      <div class="modal-body">
+                        <table class="table table table-bordered">
+                          <thead>
+                            <tr>
+                              <td><%= t("orders.product_name_table") %></td>
+                              <td><%= t("orders.quantity_table") %></td>
+                              <td><%= t("orders.price_table") %></td>
+                              <td><%= t("orders.subtotal_table") %></td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <% order.order_details.includes(:product).each do |ord| %>
+                              <tr>
+                                <td><%= ord.product_name %></td>
+                                <td><%= ord.quantity %></td>
+                                <td><%= number_to_currency(ord.price) %></td>
+                                <td><%= subtotal_order_admin ord.quantity, ord.price %></td>
+                              </tr>
+                            <% end %>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+
+
+
+    </div>
+  </div>
+  </div>
+<hr class="offset-lg">
+<hr class="offset-lg">

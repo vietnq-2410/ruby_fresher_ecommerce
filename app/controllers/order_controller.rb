@@ -19,6 +19,21 @@ class OrderController < ApplicationController
     redirect_to cart_index_path
   end
 
+  def show
+    @order_user = @current_user.orders
+  end
+
+  def update
+    order = Order.find_by(id: params[:order_id])
+    order.status = 4
+    if order.save
+      flash[:success] = t "message.update_success"
+    else
+      flash[:danger] = t "message.update_failed"
+    end
+    redirect_to order_path(@current_user.id)
+  end
+
   private
 
   def load_customer_name

@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :load_product, :up_view_product, :get_id_viewed
 
   def show
-    @products_same_category = Product.same_category(@product.category_id)
+    @products_same_category = Product.by_category(@product.category_id)
   end
 
   private
@@ -23,5 +23,6 @@ class ProductsController < ApplicationController
   def get_id_viewed
     session[:viewed] ||= []
     session[:viewed] << @product
+    session[:viewed].shift if session[:viewed].count > 5
   end
 end

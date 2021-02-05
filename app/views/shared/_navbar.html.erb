@@ -17,9 +17,12 @@
           <li><%= link_to t("categories.category"), "#" %></li>
         </ul>
       </li>
-      <li><%= link_to t("menu.store"), store_path %></li>
+      <li><%= link_to t("menu.products"), store_path %></li>
       <li><%= link_to t("menu.suggest"), suggest_path %></li>
       <li><%= link_to t("menu.cart"), cart_index_path %></li>
+      <% if logged_in? %>
+        <li><%= link_to t("menu.history"), order_path(@current_user.id) %></li>
+      <% end %>
     </ul>
   </div>
 </div>

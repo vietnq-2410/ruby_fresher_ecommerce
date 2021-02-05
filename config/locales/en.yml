@@ -28,6 +28,13 @@ en:
     name: "name of product"
     price: "price of product"
     recommendation: "Recommendation for you"
+    rate_question: "How do you see this product?"
+    rate_suggest: "Please rate our products:" 
+    qty_left: "Left %{qty} items"
+    rates: "Have %{rates} rates, average: %{avg}"
+    your_rate: "Your rate: "
+    comment_question: "What do you think? (#%{cmts})"
+    day_ago: "%{day} day ago"
   caterogies:
     category: "Category"
   action:
@@ -44,6 +51,7 @@ en:
     confirm: "You sure?"
     destroy: "Destroy"
     confirm_order: "Confirm order"
+    add_comment: "Add comment"
   message:
     cart_update_success: "Updated!"
     cart_update_fail: "Quantity must be from 1 to 10"
@@ -63,6 +71,7 @@ en:
       search_by_name: "Product search results: '%{name}' "
       by_category: "Products under the category: %{category}"
       not_result: "There is no result"
+    rate_failed: "Rate failed!"
   carts:
     your_cart: "Your cart:"
     summary: "Summary"
@@ -90,15 +99,15 @@ en:
     customer_name_table: "Name's customer"
     status_table:
       status: "Status"
-      "0": "Waiting"
-      "1": "Confirmed"
-      "2": "Delivering"
-      "3": "Finish"
-      "4": "Cancelled"
+      0: "Waiting"
+      1: "Confirmed"
+      2: "Delivering"
+      3: "Finish"
+      4: "Cancelled"
     payment_status_table:
       payment_status: "Payment status"
-      "0": "Unpaid"
-      "1": "Paid"
+      0: "Unpaid"
+      1: "Paid"
     phone: "Phone"
     address: "Address"
     product_name_table: "Name's product"
@@ -115,6 +124,7 @@ en:
     payment_status:
       unpaid: "Unpaid"
       paid: "Paid"
+    history: "Your order"
   ship_price:
     1: 50
     2: 100
@@ -139,12 +149,22 @@ en:
     products: "Products"
     orders: "Orders"
     users: "Users"
+    cart: "Cart"
+    history: "Your history"
   admins:
     order_manage: "Orders manage"
   mails:
     send_order: "We've received your order"
     dear: "Dear"
     title_thank: "Thank you for your order, your items:"
+    acc_activation: "Active your account"
+    hi: "Hi!"
+    desc: "Click this link to active your account:"
+    activate: "Active"
+    reset_pass_subject: "Reset password for you"
+    reset_text1: "Click this link to reset password"
+    reset_pass: "Reset password"
+    reset_text2: "Thanks!"
   footer:
     ft1: "24/7 free"
     ft2: "support"

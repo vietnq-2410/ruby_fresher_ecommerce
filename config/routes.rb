@@ -12,8 +12,10 @@ Rails.application.routes.draw do
     post "/signup", to: "users#create"
     resources :users
     resources :cart, only: %i(index create update)
-    resources :order, only: %i(index create)
+    resources :order, only: %i(index create show update)
     resources :products, only: :show
+    resource :rates, only: :create
+    resource :comments, only: :create
     post "remove-cart-item/:id" => "cart#remove_cart_item", as: "remove_cart_item"
     get "remove-cart-all-item" => "cart#remove_all_item"
     resources :account_activations, only: :edit

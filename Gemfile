@@ -57,3 +57,13 @@ gem "jquery-masonry-rails"
 gem "font-ionicons-rails"
 gem "imagesLoaded_rails"
 gem "scrollbar-rails"
+gem "redis-rails"
+gem "redis-store", "~> 1.4.0"
+gem "activerecord-session_store"
+gem "pg"
+
+group :production do
+  gem "pg"
+  gem "unicorn"
+  gem "faker", git: "https://github.com/stympy/faker"
+end

@@ -37,9 +37,22 @@
     </div>
     <div class="align-right align-center-xs">
       <hr class="offset-sm">
-      <a href="./store/"> <h5 class="upp"><%= t("action.view_all") %></h5> </a>
+      <%= link_to store_path do %>
+        <h5 class="upp"><%= t("action.view_all") %></h5>
+      <% end %>
     </div>
   </div>
 </section>
+<% if session[:viewed].present? %>
+  <section class="products">
+    <div class="container">
+      <h2 class="h2 upp align-center"> <%= t("index.viewed") %></h2>
+      <hr class="offset-lg">
+      <div class="row">
+        <%= render partial: "products/products", collection: session[:viewed], as: "pro" %>
+      </div>
+    </div>
+  </section>
+<% end %>
 <hr class="offset-lg">
 <hr class="offset-sm">

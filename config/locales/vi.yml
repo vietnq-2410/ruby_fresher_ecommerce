@@ -4,6 +4,7 @@ vi:
     vi: "Tiếng Việt"
   index:
     title: "Máy tính xách tay hot trend"
+    viewed: "Recently viewed products"
   banners:
     title: "Cung cấp nhẹ và mạnh mẽ"
     title2: "Mới tuyệt vời"
@@ -17,6 +18,11 @@ vi:
     name: "Tên"
     password_again: "Nhập lại mật khẩu"
     remember: "Nhớ đăng nhập"
+    create_my_account: "Tạo tài khoản"
+    forgot_pass: "Quên mật khẩu"
+    new_user: "Người dùng mới?"
+    profile: "Hồ sơ"
+    reset_pass: "Đặt lại mật khẩu"
   products:
     details: "Chi tiết"
     name: "tên sản phẩm"
@@ -89,6 +95,11 @@ vi:
       "1": "Đã trả tiền"
     phone: "Điện thoại"
     address: "Địa chỉ"
+    product_name_table: "Tên sản phẩm"
+    quantity_table: "Số lượng"
+    subtotal_table: "Tổng số"
+    price_table: "Giá"
+    price_ship_table: "Giá ship"
     status:
       waiting: "Đang chờ"
       confirmed: "Đã xác nhận"

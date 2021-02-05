@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :load_product
-  before_action :up_view_product
+  before_action :load_product, :up_view_product, :get_id_viewed
+
   def show
     @products_same_category = Product.same_category(@product.category_id)
   end
@@ -18,5 +18,10 @@ class ProductsController < ApplicationController
   def up_view_product
     @product.view += 1
     @product.save
+  end
+
+  def get_id_viewed
+    session[:viewed] ||= []
+    session[:viewed] << @product
   end
 end

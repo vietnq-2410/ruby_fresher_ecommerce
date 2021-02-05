@@ -13,7 +13,7 @@
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
     </div>
-    <% if @cart.any? %>
+    <% if  @cart.present? %>
       <div class="col-md-8">
         <div class="panel panel-default">
           <div class="panel-body">

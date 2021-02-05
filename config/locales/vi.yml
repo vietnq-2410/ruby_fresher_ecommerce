@@ -141,6 +141,10 @@ vi:
     users: "Người dùng"
   admins:
     order_manage: "Quản lý đơn hàng"
+  mails:
+    send_order: "Chúng tôi đã nhận được đơn đặt hàng của bạn"
+    dear: "Thân gửi"
+    title_thank: "Cảm ơn bạn đã đặt hàng, các mặt hàng của bạn:"
   footer:
     ft1: "24/7 miễn phí"
     ft2: "hỗ trợ"

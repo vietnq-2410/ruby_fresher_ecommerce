@@ -27,6 +27,13 @@ en:
     name: "name of product"
     price: "price of product"
     recommendation: "Recommendation for you"
+    rate_question: "How do you see this product?"
+    rate_suggest: "Please rate our products:" 
+    qty_left: "Left %{qty} items"
+    rates: "Have %{rates} rates, average: %{avg}"
+    your_rate: "Your rate: "
+    comment_question: "What do you think? (#%{cmts})"
+    day_ago: "%{day} day ago"
   caterogies:
     category: "Category"
   action:
@@ -56,6 +63,7 @@ en:
     update_success: "Update success!"
     update_failed: "Update failed!"
     not_admin: "You are not admin!"
+    rate_failed: "Rate failed!"
   carts:
     your_cart: "Your cart:"
     summary: "Summary"

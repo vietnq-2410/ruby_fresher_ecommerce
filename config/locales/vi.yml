@@ -22,6 +22,13 @@ vi:
     name: "tên sản phẩm"
     price: "giá của sản phẩm"
     recommendation: "Đề xuất cho bạn"
+    qty_left: "Còn lại %{qty} sản phẩm"
+    rate_question: "Bạn thấy sản phẩm này như thế nào?"
+    rate_suggest: "Vui lòng đánh giá sản phẩm của chúng tôi:" 
+    rates: "Có %{rates} đánh giá, trung bình: %{avg}"
+    your_rate: "Đánh giá của bạn: "
+    comment_question: "Bạn nghĩ sao về sản phẩm này?(#%{cmts})"
+    day_ago: "%{day} ngày trước"
   caterogies:
     category: "Danh mục"
   action:
@@ -51,6 +58,7 @@ vi:
     update_success: "Cập nhật thành công!"
     update_failed: "Cập nhật không thành công!"
     not_admin: "Bạn không phải quản trị viên"
+    rate_failed: "Đánh giá thất bại!"
   carts:
     your_cart: "Giỏ hàng của bạn:"
     summary: "Tạm tính"

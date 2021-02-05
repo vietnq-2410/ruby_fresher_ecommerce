@@ -1,47 +1,120 @@
 <hr class="offset-lg">
 <hr class="offset-lg">
 <hr class="offset-lg hidden-xs">
-<div class="product">
+<section class="product">
   <div class="container">
     <div class="row">
-      <div class="col-sm-7 col-md-7">
-        <%= image_tag "product/1.jpg", class: "img-responsive" %>
+      <div class="col-sm-7 col-md-7 white no-padding">
+        <div class="carousel-product" data-count="4" data-current="1">
+          <div class="items">
+            <button class="btn btn-control" data-direction="right"> <i class="ion-ios-arrow-right"></i></button>
+            <button class="btn btn-control" data-direction="left"> <i class="ion-ios-arrow-left"></i></button>
+            <div class="item center" data-marker="1">
+              <%= image_tag "product/1.jpg", class: "background" %>
+            </div>
+            <div class="item" data-marker="2">
+              <%= image_tag "product/2.jpg", class: "background" %>
+            </div>
+            <div class="item" data-marker="3">
+              <%= image_tag "product/3.jpg", class: "background" %>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-5 col-md-5">
-        <h1><%= @product.name %></h1>
-        <h3><%= @product.category_name %></h3>
-        <p class="price"><%= number_to_currency(@product.price) %></p>
-        <p class="price through"><%= calculator_old_price %></p>
-        <br><br>
-        <%= form_tag cart_index_path, remote: true do %>
-          <%= hidden_field_tag :product_id, @product.id %>
-          <%= submit_tag t("action.add_to_cart"), class: "btn btn-primary btn-sm rounded", onclick: t("action.added_cart") %>
-        <% end %>
+      <div class="col-sm-5 col-md-5 no-padding-xs">
+        <div class="caption">
+          <h1><%= @product.name %></h1>
+          <p> &middot; <%= @product.category_name %></p>
+          <p> &middot; <%= t("products.qty_left", qty: @product.quantity) %></p>
+          <p> &middot; <%= t("products.rates", rates: @product.rates.count, avg: @product.rates.average(:rate).round(1)) %> <i class="ion-ios-star text-warning"></i></p>
+          <p> (<i class="ion-eye text-danger"></i>) <%= @product.view %></p>
+          <hr class="offset-md hidden-sm">
+          <hr class="offset-sm visible-sm">
+          <hr class="offset-xs visible-sm">
+
+          <p class="price"><%= number_to_currency(@product.price) %></p>
+          <p class="price through"><%= calculator_old_price %></p>
+          <hr class="offset-md">
+          <ul class="nav nav-pills">
+            <li role="presentation">
+              <%= form_tag cart_index_path, remote: true do %>
+                <%= hidden_field_tag :product_id, @product.id %>
+                <%= submit_tag t("action.add_to_cart"), class: "btn btn-primary btn-sm rounded ion-bag", onclick: t("action.added_cart") %>
+              <% end %>
+            </li>
+            <li role="presentation"><button class="btn btn-link"> <i class="ion-ios-heart"></i> <%= t("favorites.favorite") %> </button></li>
+          </ul>
+        </div>
       </div>
     </div>
-
+    <hr class="offset-sm hidden-xs">
 
     <div class="row">
-      <div class="col-sm-7">
-        <h1><%= @product.name %></h1>
-          <br>
+      <div class="col-sm-7 white sm-padding">
+        <hr class="offset-sm visible-xs">
 
-          <p>
-            <%= @product.description %>
-          </p>
+        <h2 class="h1"><%= @product.name %></h2>
+        <br>
+
+        <p>
+          <%= @product.description %>
+        </p>
+        <hr>
+
       </div>
+      <% if logged_in? %>
+        <div class="col-sm-5 no-padding-xs">
+          <div class="talk white">
+            <%= render "rates" %>
+          </div>
+          <hr class="offset-sm hidden-xs">
+
+          <div class="comments white">
+            <h2 class="h3"><%= t("products.comment_question", cmts: @product.comments.count) %></h2>
+            <br>
+
+            <div class="wrapper">
+              <div class="content">
+                <% @product.comments.includes(:user).each do |cmt| %>
+                  <h3><%= cmt.user_name %></h3>
+                  <label><%= t("products.day_ago", day: get_time(cmt.updated_at)) %></label>
+                  <p>
+                    "
+                      <%= cmt.comment %>
+                    "
+                  </p>
+                <% end %>
+              </div>
+            </div>
+            
+            <hr class="offset-lg">
+            <hr class="offset-md">
+
+            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal-Comment"> <i class="ion-chatbox-working"></i> Add comment </button>
+            <hr class="offset-md visible-xs">
+          </div>            
+        </div>
+      <% else %>
+        <div class="col-sm-5 no-padding-xs">
+          <div class="talk white">
+            <h2 class="h3"><%= t("message.must_loggin") %></h2>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-</div>
-<br><br>
+</section>
+<hr class="offset-lg">
 
 <section class="products">
   <div class="container">
-    <h1 class="h3"><%= t("products.recommendation") %></h1>
-    
+    <h2 class="upp align-center-xs"> <%= t("products.recommendation") %> </h2>
+    <hr class="offset-lg">
+
     <div class="row">
       <%= render partial: "products/products", collection: @products_same_category, as: :pro  %>
     </div>
   </div>
 </section>
 <br><br>
+

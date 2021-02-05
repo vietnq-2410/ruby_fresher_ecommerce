@@ -1,0 +1,30 @@
+<% if check_exist_rate? @product.id %>
+  <h2 class="h3"><%= t("products.your_rate") %></h2>
+  <ul class="nav nav-pills alert alert-warning">
+    <li role="presentation"><%= get_rate_by_product @product.id %></li>
+    <li role="presentation"><i class="ion-star"></i></li>
+  </ul>
+<% else %>
+  <h2 class="h3"><%= t("products.rate_question") %></h2>
+  <p class=""><%= t("products.rate_suggest") %></p>
+  <hr class="offset-md">
+  <%= form_tag rates_path, id: "rateForm", remote: true do %>
+    <%= hidden_field_tag :product_id, @product.id %>
+    <%= hidden_field_tag :user_id, @current_user.id if logged_in? %>
+    <div class="rate_parent">
+      <div class="rate">
+        <input type="radio" id="star5" name="rate" value="5" />
+        <label for="star5" title="text"></label>
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text"></label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text"></label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text"></label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text"></label>
+      </div>
+    </div>
+  <% end %>
+  <%= javascript_pack_tag "submitRateForm", "data-turbolinks-track": "reload" %>
+<% end %>

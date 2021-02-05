@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :cart, only: %i(index create update)
     resources :order, only: %i(index create)
     resources :products, only: :show
+    resource :rates, only: %i(create update)
     post "remove-cart-item/:id" => "cart#remove_cart_item", as: "remove_cart_item"
     get "remove-cart-all-item" => "cart#remove_all_item"
     resources :account_activations, only: :edit

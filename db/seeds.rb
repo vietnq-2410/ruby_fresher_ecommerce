@@ -26,7 +26,7 @@ end
 20.times do |n|
   category_idProduct = n + 1
   nameProduct = "Product #{n}"
-  descriptionProduct = "description of product"
+  descriptionProduct = Faker::Lorem.paragraph(sentence_count: 100)
   viewProduct = n*1000
   quantityProduct = n*10
   priceProduct = n*12300

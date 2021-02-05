@@ -95,11 +95,13 @@
         <div class="row">
           <%= form_tag admin_order_path(@order.id), method: :PATCH do %>
             <div class="col-md-4">
-              <i><%= t("orders.status_table.status") %>:</i><br>
-              <%= select_tag :status, options_for_select(option_for_status, @order.status), class: "form-control" if @order.status %>
+              <i><%= t("orders.status_table.status") %>:</i> <span class="text-warning"><%=t("orders.status_table.#{@order.status}")%></span><br>
+              <%= select_tag :status, options_for_select(option_for_status, @order.status), class: "form-control" %>
             </div>
             <div class="col-md-4">
-              <i><%= t("orders.payment_status_table.payment_status") %>:</i><br>
+              <i><%= t("orders.payment_status_table.payment_status") %>:</i>
+              <span class="text-danger"><%=t("orders.status_table.#{@order.payment_status}")%></span>
+              <br>
               <%= select_tag :payment_status, options_for_select(option_for_payment_status, @order.payment_status), class: "form-control" %>
             </div>
             <div class="col-md-4">

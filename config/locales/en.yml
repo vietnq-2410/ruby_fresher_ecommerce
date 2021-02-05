@@ -134,6 +134,10 @@ en:
     users: "Users"
   admins:
     order_manage: "Orders manage"
+  mails:
+    send_order: "We've received your order"
+    dear: "Dear"
+    title_thank: "Thank you for your order, your items:"
   footer:
     ft1: "24/7 free"
     ft2: "support"

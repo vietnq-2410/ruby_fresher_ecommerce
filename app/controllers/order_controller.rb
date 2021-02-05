@@ -10,6 +10,7 @@ class OrderController < ApplicationController
     Order.transaction do
       save_order!
     end
+    OrderMailer.send_order(@order).deliver
     flash[:success] = t "message.order_success"
     session[:cart].clear
     redirect_to cart_index_path

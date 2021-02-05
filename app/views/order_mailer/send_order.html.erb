@@ -1,0 +1,36 @@
+<h3>Unistore Pro</h3>
+<p>
+  <%= t("mails.dear") %> <b><%= @order.customer_name %></b>,
+</p>
+ 
+<p>
+  <%= t("mails.title_thank") %>
+</p>
+<table class="table table table-bordered">
+  <thead>
+    <tr>
+      <td><%= t("orders.product_name_table") %></td>
+      <td><%= t("orders.quantity_table") %></td>
+      <td><%= t("orders.price_table") %></td>
+      <td><%= t("orders.subtotal_table") %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.order_details.includes(:product).each do |ord| %>
+      <tr>
+        <td><%= ord.product_name %></td>
+        <td><%= ord.quantity %></td>
+        <td><%= number_to_currency(ord.price) %></td>
+        <td><%= number_to_currency(ord.quantity * ord.price) %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><i><%= t("orders.status_table.status") %>:</i><br></td>
+      <td><p class="text-warning"><%= t("orders.status_table.#{@order.status}") %></p></td>
+    </tr>
+    <tr>
+      <td><i><%= t("orders.payment_status_table.payment_status") %>:</i></td>
+      <td><p class="text-danger"><%= t("orders.payment_status_table.#{@order.payment_status}") %></p></td>
+    </tr>
+  </tbody>
+</table>

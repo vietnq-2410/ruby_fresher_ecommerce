@@ -32,8 +32,13 @@ bower.json
 .powenv
 
 .byebug_history
-spec/
+spec/fixtures
+spec/helpers
+spec/mailers
+spec/requests
+spec/views
 node_modules/
+bin
 
 /public/packs
 /public/packs-test

@@ -26,6 +26,10 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "simplecov", require: false, group: :test
+  gem "shoulda-matchers", "~> 3.0", require: false
+  gem "database_cleaner", "~> 1.5"
+  gem "factory_bot_rails"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -37,6 +41,7 @@ group :development, :test do
   gem "rspec-rails", "~> 4.0.1"
   gem "mysql2", "~> 0.4.10"
   gem "faker", git: "https://github.com/stympy/faker"
+  gem "factory_bot_rails"
 end
 
 gem "bcrypt", "3.1.15"

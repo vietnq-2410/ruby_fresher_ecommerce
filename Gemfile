@@ -30,6 +30,7 @@ group :test do
   gem "shoulda-matchers", "~> 3.0", require: false
   gem "database_cleaner", "~> 1.5"
   gem "factory_bot_rails"
+  gem "rails-controller-testing"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -42,6 +43,7 @@ group :development, :test do
   gem "mysql2", "~> 0.4.10"
   gem "faker", git: "https://github.com/stympy/faker"
   gem "factory_bot_rails"
+  gem "rails-controller-testing"
 end
 
 gem "bcrypt", "3.1.15"

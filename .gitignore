@@ -32,11 +32,6 @@ bower.json
 .powenv
 
 .byebug_history
-spec/fixtures
-spec/helpers
-spec/mailers
-spec/requests
-spec/views
 node_modules/
 bin
 

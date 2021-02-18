@@ -1,0 +1,33 @@
+<hr class="offset-top">
+<h1 class="text-center"><%=t("modals.login")%></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+        <%= link_to t("modals.forgot_pass"), new_user_password_path %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.label :remember_me, class: "checkbox" do %>
+            <%= f.check_box :remember_me %>
+            <span><%=t("modals.remember_me")%></span>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit t("action.login"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    <p><%= t("modals.new_user") %> <%= link_to t("modals.registration"), new_user_registration_path %></p>
+  </div>
+</div>

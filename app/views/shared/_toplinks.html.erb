@@ -1,9 +1,9 @@
-<% if logged_in? %>
+<% if user_signed_in? %>
   <%= link_to t("modals.profile"), current_user %>
-  <%= link_to t("action.logout"), logout_path, method: :delete %>
+  <%= link_to t("action.logout"), destroy_user_session_path, method: :delete %>
 <% else %>
-  <%= link_to t("modals.registration"), signup_path, class: "ion-person" %>
-  <%= link_to t("modals.signin"), login_path, class: "ion-unlocked" %>
+  <%= link_to t("modals.registration"), new_user_registration_path, class: "ion-person" %>
+  <%= link_to t("modals.signin"), new_user_session_path, class: "ion-unlocked" %>
 <% end %>
 <%= link_to t("favorites.favorite"), "./favorites/", class: "ion-ios-heart" %>
 <%= link_to "8000 555-44-65", "tel:+80005554465", class: "hidden-xs ion-android-call" %>

@@ -19,9 +19,12 @@ RSpec.describe Product, type: :model do
       id = 1
       expect(Product.by_ids(id)).to eq(Product.where(id: id))
     end
-    it ".same_category return by same category" do
+    it ".by_category return by same category" do
       category_id = 1
-      expect(Product.same_category(category_id)).to match_array(Product.where(category_id: category_id))
+      expect(Product.by_category(category_id)).to match_array(Product.where(category_id: category_id))
+    end
+    it ".sort_view rerurn all product viewest" do
+      expect(Product.sort_view).to eq(Product.order(view: :desc).limit Settings.trending_products)
     end
   end
 end

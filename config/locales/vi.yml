@@ -105,10 +105,18 @@ vi:
     favorite: "Yêu thích"
     favorite_title: "Yêu thích của bạn"
   store:
+    filter: "Bộ lọc"
     sorting: "Sắp xếp"
     price_low: "Giá [Thấp-Cao]"
     price_high: "Giá [Cao-Thấp]"
     search_by_name: "Tìm kiếm theo tên"
+    search: "Tìm kiếm"
+    search_placeholder: "tìm kiếm theo tên, danh mục, mô tả, ..."
+    price: "Giá"
+    bigger_price: "≥ Giá"
+    smaller_price: "≤ Giá"
+    create_at: "Ngày tạo"
+    category: "Danh mục"
   suggest:
     title: "Bạn có sản phẩm nào không?"
     title2: "Vui lòng chèn sản phẩm vào biểu mẫu bên dưới."

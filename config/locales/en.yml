@@ -115,10 +115,18 @@ en:
     favorite: "Favorite"
     favorite_title: "Your Favorites"
   store:
+    filter: "Filter"
     sorting: "Sorting"
     price_low: "Price [Low-High]"
     price_high: "Price [High-Low]"
     search_by_name: "Search by name"
+    search: "Search"
+    search_placeholder: "search by name, category, description,..."
+    price: "Price"
+    bigger_price: "≥ price"
+    smaller_price: "≤ price"
+    create_at: "Create at"
+    category: "Category"
   suggest:
     title: "Have you product any?"
     title2: "Please insert products to a form below."

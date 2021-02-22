@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :load_product
   before_action :up_view_product
   def show
-    @products_same_category = Product.same_category(@product.category_id)
+    @products_same_category = Product.by_category(@product.category_id)
   end
 
   private

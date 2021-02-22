@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   protect_from_forgery with: :exception
 
+  rescue_from CanCan::AccessDenied do
+    flash[:warning] = t("message.alert_view_profile")
+    redirect_to root_path
+  end
+
   protected
 
   def configure_permitted_parameters
@@ -17,13 +22,5 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
-  end
-
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t "account.alert_login"
-    redirect_to root_path
   end
 end

@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  authorize_resource
   before_action :load_product
   before_action :up_view_product
   def show

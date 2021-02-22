@@ -30,6 +30,7 @@ gem "imagesLoaded_rails"
 gem "scrollbar-rails"
 gem "devise", "~> 4.1"
 gem "ransack", github: "activerecord-hackery/ransack"
+gem "cancancan", "~> 3.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

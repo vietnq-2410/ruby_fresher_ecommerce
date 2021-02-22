@@ -54,8 +54,4 @@ class OrderController < ApplicationController
       note: params[:note]
     )
   end
-
-  def require_loggin
-    redirect_to login_path unless logged_in?
-  end
 end

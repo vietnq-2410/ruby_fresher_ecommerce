@@ -1,4 +1,5 @@
 class Admin::OrdersController < Admin::AdminsController
+  authorize_resource
   before_action :load_order, except: :index
 
   def index; end

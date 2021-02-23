@@ -1,18 +1,22 @@
-User.create!(name: "Nguyen Quoc Viet",
+admin = User.new(
+  name: "Nguyen Quoc Viet",
   email: "vietnq812@gmail.com",
   password: "123123123",
   password_confirmation: "123123123",
   role: 1,
-  activated: 1, activated_at: Time.zone.now)
+  activated: 1, confirmed_at: Time.zone.now)
+admin.skip_confirmation!
+admin.save!
+
 20.times do |n|
 name = Faker::Name.name
 email = "example-#{n + 1}@gmail.com"
 User.create!(name: name,
   email: email,
-  password: "password",
-  password_confirmation: "password",
+  password: "123123123",
+  password_confirmation: "123123123",
   role: 0,
-  activated: 1, activated_at: Time.zone.now)
+  activated: 1, confirmed_at: Time.zone.now)
 end
 
 Category.create!(name: "Category 1")

@@ -24,3 +24,4 @@ order:
     paid: 1
 admin_role: 1
 search_by_category: "by_category"
+format_date: "%d/%m/%Y"

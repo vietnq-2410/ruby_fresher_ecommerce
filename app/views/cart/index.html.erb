@@ -13,7 +13,7 @@
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
     </div>
-    <% if @cart.any? %>
+    <% if @cart.present? %>
       <div class="col-md-8">
         <div class="panel panel-default">
           <div class="panel-body">
@@ -72,7 +72,7 @@
               </div>
             </div>
             <hr class="offset-md">
-            <% if logged_in? %>
+            <% if user_signed_in? %>
               <%= link_to order_index_path, class: "btn btn-primary btn-lg justify" do %>
                 <i class="ion-android-checkbox-outline"></i> <%= t("carts.checkout_order") %>
               <% end %>

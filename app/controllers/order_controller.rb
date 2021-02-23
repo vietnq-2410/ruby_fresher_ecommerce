@@ -1,6 +1,6 @@
 class OrderController < ApplicationController
-  before_action :require_loggin
-  before_action :load_customer_name, :load_order_new, only: :create
+  before_action :authenticate_user!
+  before_action :load_customer_name, :load_params, only: :create
 
   def index
     @cart = session[:cart]
@@ -21,14 +21,11 @@ class OrderController < ApplicationController
   private
 
   def load_customer_name
-    @customer_name = if params[:customer_name].blank?
-                       @current_user.name if logged_in?
-                     else
-                       params[:customer_name]
-                     end
+    @customer_name = params[:customer_name].presence || current_user.name
   end
 
-  def save_order!
+  def load_order_details
+    @order_details ||= []
     session[:cart].each do |pro_id, qty|
       product = Product.find_by id: pro_id
       if product.blank?
@@ -36,22 +33,30 @@ class OrderController < ApplicationController
         session[:cart].clear
         redirect_to root_path
       else
-        @order.order_details.build product_id: pro_id,
-                                  quantity: qty,
-                                  price: product.price
+        @order_details << {
+          product_id: pro_id,
+          quantity: qty,
+          price: product.price
+        }
       end
     end
+  end
+
+  def save_order!
+    @order = current_user.orders.create(@order_params)
     @order.save!
   end
 
-  def load_order_new
-    @order = @current_user.orders.new(
+  def load_params
+    load_order_details
+    @order_params = {
       customer_name: @customer_name,
       phone: params[:phone],
       address: params[:address],
       ship_method: params[:ship_method],
       pay_method: params[:pay_method],
-      note: params[:note]
-    )
+      note: params[:note],
+      order_details_attributes: @order_details
+    }
   end
 end

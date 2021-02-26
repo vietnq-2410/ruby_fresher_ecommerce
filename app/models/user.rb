@@ -13,6 +13,8 @@ class User < ApplicationRecord
             format: {with: VALID_EMAIL_REGEX}, uniqueness: true
   validates :password, presence: true
 
+  scope :sort_desc, ->{order(created_at: :desc)}
+  
   private
 
   def downcase_email

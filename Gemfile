@@ -31,6 +31,13 @@ gem "scrollbar-rails"
 gem "devise", "~> 4.1"
 gem "ransack", github: "activerecord-hackery/ransack"
 gem "cancancan", "~> 3.0"
+gem "grape"
+gem "grape_on_rails_routes"
+gem "grape-entity"
+gem "grape-active_model_serializers"
+gem "fast_jsonapi"
+gem "jwt"
+gem "rack-cors"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

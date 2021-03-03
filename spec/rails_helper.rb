@@ -30,12 +30,6 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 
-  Shoulda::Matchers.configure do |config|
-    config.integrate do |with|
-      with.test_framework :rspec
-      with.library :rails
-    end
-  end
   DatabaseCleaner.strategy = :truncation
   config.around(:each) do |example|
     DatabaseCleaner.cleaning do
@@ -51,5 +45,12 @@ RSpec.configure do |config|
   end
   config.after(:each) do
     DatabaseCleaner.clean
+  end
+
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
   end
 end

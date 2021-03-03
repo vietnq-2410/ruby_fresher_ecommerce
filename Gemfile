@@ -33,6 +33,7 @@ gem "ransack", github: "activerecord-hackery/ransack"
 gem "cancancan", "~> 3.0"
 gem "jwt"
 gem "active_model_serializers", "~> 0.10.0"
+gem "apipie-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

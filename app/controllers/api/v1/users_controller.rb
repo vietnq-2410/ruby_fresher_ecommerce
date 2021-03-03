@@ -1,4 +1,6 @@
 class Api::V1::UsersController < Api::V1::BaseController
+  include ::UsersDoc
+
   before_action :authenticate_request!
 
   def index

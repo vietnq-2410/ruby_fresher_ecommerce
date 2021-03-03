@@ -10,8 +10,7 @@ RSpec.describe "Api::V1::Users", type: :request do
     end
 
     it "wrong JWT" do
-      headers = { "Authorization" => "false" }
-      get "/api/v1/users", headers: headers
+      get "/api/v1/users"
       expect(JSON.parse(response.body)["status"]).to eq nil
     end
   end

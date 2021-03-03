@@ -9,7 +9,7 @@ class Api::V1::BaseController < ActionController::API
     render json: {errors: ["Not Authenticated"]}, status: :unauthorized
     @current_user = User.find(auth_token["user_id"])
   rescue JWT::VerificationError, JWT::DecodeError
-    render json: {errors: ["Not Authenticated"]}, status: :unauthorized
+    nil
   end
 
   def http_token

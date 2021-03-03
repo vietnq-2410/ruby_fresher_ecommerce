@@ -81,6 +81,8 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    apipie-rails (0.5.18)
+      rails (>= 4.1)
     ast (2.4.2)
     autoprefixer-rails (10.2.4.0)
       execjs
@@ -371,6 +373,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.0)
   active_storage_validations (= 0.8.2)
+  apipie-rails
   bcrypt (= 3.1.15)
   bootsnap (>= 1.4.2)
   bootstrap-sass (>= 3.3.6)

@@ -31,6 +31,8 @@ gem "scrollbar-rails"
 gem "devise", "~> 4.1"
 gem "ransack", github: "activerecord-hackery/ransack"
 gem "cancancan", "~> 3.0"
+gem "jwt"
+gem "active_model_serializers", "~> 0.10.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -47,8 +49,8 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem "simplecov", require: false, group: :test
-  gem "shoulda-matchers", "~> 3.0", require: false
+  gem "simplecov", require: false
+  gem "shoulda-matchers", "~> 4.0"
   gem "database_cleaner", "~> 1.5"
   gem "factory_bot_rails"
   gem "rails-controller-testing"

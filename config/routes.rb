@@ -17,5 +17,11 @@ Rails.application.routes.draw do
       get "/" => "admins#dashboard"
       resources :orders
     end
+    namespace :api do
+      namespace :v1 do
+        post "auth_user" => "authentication#authenticate_user"
+        resources :users
+      end
+    end
   end
 end
